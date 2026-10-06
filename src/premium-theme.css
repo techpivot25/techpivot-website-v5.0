@@ -1,0 +1,48 @@
+/* Add as the FIRST line of src/index.css:  @import "./premium-theme.css";
+   Uses your existing --primary / --background / --card tokens, so light + dark mode both work. */
+
+.pm-highlight {
+  background-image: linear-gradient(hsl(var(--primary)), hsl(var(--primary)));
+  background-repeat: no-repeat;
+  background-position: 0 94%;
+  background-size: 0% 0.16em;
+  transition: background-size 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+.pm-highlight.pm-in { background-size: 100% 0.16em; }
+
+/* Dark liquid-metal band */
+.pm-dark {
+  background:
+    radial-gradient(60% 80% at 82% 15%, hsl(var(--primary) / 0.28), transparent 60%),
+    radial-gradient(50% 70% at 8% 95%, hsl(var(--accent) / 0.12), transparent 65%),
+    conic-gradient(from 210deg at 60% 50%, hsl(220 40% 5%), hsl(220 30% 12%), hsl(220 40% 5%) 40%, hsl(220 25% 17%) 60%, hsl(220 40% 5%));
+  color: #fff;
+}
+
+/* Light silky band (follows light/dark theme) */
+.pm-light {
+  background:
+    radial-gradient(70% 90% at 12% 0%, hsl(var(--primary) / 0.12), transparent 60%),
+    linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+}
+
+.pm-glass {
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(14px);
+  border: 1px solid hsl(var(--foreground) / 0.07);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px -30px hsl(0 0% 0% / 0.25);
+}
+.pm-lift { transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease; }
+.pm-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -24px hsl(var(--primary) / 0.45); }
+
+.pm-float { animation: pm-float 7s ease-in-out infinite; }
+@keyframes pm-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-float { animation: none; }
+  .pm-highlight { transition: none; background-size: 100% 0.16em; }
+}

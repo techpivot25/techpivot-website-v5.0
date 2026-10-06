@@ -1,24 +1,24 @@
-import { Shield, Cloud, Server, Lock, Eye, AlertTriangle, Database, FileCheck, RefreshCw } from "lucide-react";
+import { Shield, Cloud, Server, Lock, Eye, AlertTriangle, Database, FileCheck, RefreshCw, GitBranch, Layers, Network } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 import { AppleCardCompact } from "@/components/ui/apple-card";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const cloudServices = [
-  { icon: Cloud, title: "Cloud Migration", description: "Seamless transition to AWS, Azure, or Google Cloud with minimal disruption" },
-  { icon: Server, title: "Infrastructure Setup", description: "Scalable, reliable cloud infrastructure optimized for performance and cost" },
-  { icon: Database, title: "Cloud-Native Apps", description: "Build applications designed for cloud with microservices and containers" },
+  { icon: Cloud, title: "Cloud Migration", description: "Seamless transition to AWS, Azure, or Google Cloud with minimal disruption — including lift-and-shift, re-platforming, and full cloud-native re-architecture." },
+  { icon: Server, title: "Infrastructure as Code (IaC)", description: "Provision and manage AWS, GCP, and Azure infrastructure using Terraform, Pulumi, and CloudFormation — repeatable, version-controlled, and audit-ready." },
+  { icon: Database, title: "Cloud-Native Apps", description: "Build applications designed for the cloud with microservices, containers, and serverless architectures across AWS Lambda, Azure Functions, and GCP Cloud Run." },
 ];
 
 const securityFeatures = [
-  { icon: Lock, title: "Data Encryption", description: "End-to-end encryption for data at rest and in transit" },
-  { icon: FileCheck, title: "Compliance Management", description: "GDPR, HIPAA, SOC 2, and regulatory compliance frameworks" },
-  { icon: RefreshCw, title: "Disaster Recovery", description: "Automated backups and business continuity planning" },
+  { icon: Lock, title: "Zero-Trust Architecture", description: "Never trust, always verify — enforce identity-based access, micro-segmentation, and least-privilege policies across every layer of your cloud environment." },
+  { icon: FileCheck, title: "Compliance Management", description: "GDPR, HIPAA, SOC 2, and ISO 27001 compliance frameworks — continuously enforced with automated policy checks on AWS, Azure, and GCP." },
+  { icon: RefreshCw, title: "Disaster Recovery", description: "Automated backups, multi-region failover, and tested business continuity plans to keep your cloud workloads resilient and always available." },
 ];
 
 const additionalServices = [
-  { icon: Eye, title: "24/7 Monitoring", description: "Real-time monitoring and alerting for all cloud resources" },
-  { icon: AlertTriangle, title: "Security Audits", description: "Regular security assessments and penetration testing" },
-  { icon: Shield, title: "Incident Response", description: "Rapid response team for security incidents and breaches" },
+  { icon: Eye, title: "24/7 Monitoring & SIEM", description: "Real-time monitoring, log aggregation, and intelligent alerting across all cloud resources using AWS GuardDuty, Azure Sentinel, and GCP Security Command Center." },
+  { icon: GitBranch, title: "DevSecOps Pipelines", description: "Security baked into every CI/CD stage — automated SAST, DAST, container scanning, and secrets detection so vulnerabilities are caught before they reach production." },
+  { icon: Shield, title: "Incident Response", description: "Rapid-response team for security incidents and breaches — from initial triage and containment through root-cause analysis and remediation." },
 ];
 
 const CloudSecurity = () => {
@@ -26,10 +26,10 @@ const CloudSecurity = () => {
     <ServicePageLayout
       title="Cloud & Security Services"
       subtitle="Enterprise Protection"
-      metaTitle="Cloud & Cybersecurity Services | AWS, Azure, DevSecOps | TechPivot"
-      metaDescription="Cloud migration, DevOps and cybersecurity services on AWS, Azure and GCP. Secure infrastructure, compliance and 24x7 monitoring. Book a security assessment."
-      keywords="cloud services company, cloud migration services, AWS consulting, Azure cloud services, cybersecurity services, DevSecOps, cloud security solutions, managed cloud services, data security compliance"
-      description="Secure, scalable cloud infrastructure and enterprise-grade security solutions to protect your data and ensure compliance."
+      metaTitle="Cloud & Cybersecurity Services | AWS, Azure, GCP, DevSecOps | TechPivot"
+      metaDescription="Cloud migration, DevSecOps, and cybersecurity services on AWS, Azure, and GCP. Zero-Trust Architecture, Infrastructure as Code, compliance, and 24x7 monitoring. Book a security assessment."
+      keywords="cloud services company, cloud migration services, AWS consulting, Azure cloud services, GCP cloud, cybersecurity services, DevSecOps, Zero-Trust Architecture, Infrastructure as Code, Terraform, cloud security solutions, managed cloud services, data security compliance"
+      description="Secure, scalable cloud infrastructure across AWS, Azure, and GCP — with enterprise-grade DevSecOps, Zero-Trust Architecture, and compliance built in from day one."
       icon={<Shield className="w-8 h-8 text-primary" />}
       showGeometricBlocks={true}
     >
@@ -41,8 +41,9 @@ const CloudSecurity = () => {
               Cloud Solutions
             </h2>
             <p className="text-lg text-muted-foreground">
-              Leverage the power of cloud computing with scalable infrastructure, seamless migration, 
-              and cloud-native development expertise.
+              Leverage the full power of AWS, Azure, and Google Cloud — with scalable infrastructure, 
+              seamless migration, and Infrastructure as Code practices that make every environment 
+              repeatable and auditable.
             </p>
           </AnimatedSection>
           <div className="grid lg:grid-cols-3 gap-6">
@@ -67,7 +68,8 @@ const CloudSecurity = () => {
               Security Features
             </h2>
             <p className="text-lg text-muted-foreground">
-              Enterprise-grade security solutions to protect your data and ensure compliance.
+              Enterprise-grade security built on Zero-Trust principles — protecting your data, 
+              enforcing compliance, and keeping your cloud workloads resilient.
             </p>
           </AnimatedSection>
           <div className="grid lg:grid-cols-3 gap-6">

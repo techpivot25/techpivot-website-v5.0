@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Bot, Sparkles, Cloud, Shield, Boxes, Cpu, Lightbulb, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { AbstractOrb } from "@/components/PremiumKit";
 
 
 
@@ -74,8 +75,9 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="relative py-24 lg:py-32 bg-background overflow-hidden">
-      <div className="container px-6 lg:px-12">
+    <section id="services" className="relative py-24 lg:py-32 pm-light overflow-hidden">
+      <AbstractOrb className="absolute -right-40 -top-24 w-[520px] opacity-40" />
+      <div className="container px-6 lg:px-12 relative z-10">
         <div className="flex items-end justify-between mb-6 gap-4">
           <div>
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3">
@@ -117,7 +119,7 @@ const Services = () => {
               >
                 <Link
                   to={service.href}
-                  className="group block h-full rounded-3xl border border-border bg-card p-6 hover:shadow-elevated hover:ring-2 hover:ring-primary/40 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                  className="group block h-full pm-glass p-6 pm-lift hover:ring-2 hover:ring-primary/40"
                 >
                   <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-5 ${isPrimary ? "bg-primary/10" : "bg-accent/15"}`}>
                     <Icon className={`w-6 h-6 ${isPrimary ? "text-primary" : "text-accent-foreground"}`} strokeWidth={1.5} />

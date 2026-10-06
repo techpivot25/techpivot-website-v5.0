@@ -122,7 +122,7 @@ const Leadership = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
               >
-                The People Behind TechPivot
+                B2B buyers buy the expertise of the leaders.
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -130,7 +130,7 @@ const Leadership = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-xl text-surface-dark-foreground/70"
               >
-                A team of engineers, strategists and operators guiding our mission to deliver ambitious AI initiatives.
+                Lead with what they have built, not what they are called.
               </motion.p>
             </div>
           </div>

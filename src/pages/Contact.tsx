@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, MapPin, ArrowRight, Upload, Loader2, Calendar } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { getCalApi } from "@calcom/embed-react";
@@ -18,11 +19,16 @@ interface FormErrors {
 }
 
 const Contact = () => {
+  const location = useLocation();
+  const projectName = (location.state as { project?: string } | null)?.project;
+
   const [formData, setFormData] = useState({ 
     name: "", 
     email: "", 
     company: "", 
-    message: "",
+    message: projectName
+      ? `Hi, I'd like to know more about the ${projectName} project.`
+      : "",
     service: "",
     timeline: "",
     budget: "",

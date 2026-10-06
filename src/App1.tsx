@@ -39,9 +39,9 @@ const StaffAugmentation = lazy(() => import("./pages/services/StaffAugmentation"
 const IoT = lazy(() => import("./pages/services/IoT"));
 const Consultancy = lazy(() => import("./pages/services/Consultancy"));
 const FAQPage = lazy(() => import("./pages/FAQ"));
-const ProductConcept = lazy(() => import("./pages/products/Concept"));
-const ProductSolution = lazy(() => import("./pages/products/Solution"));
-const ProductCustomDev = lazy(() => import("./pages/products/CustomDev"));
+const ProductConcept = lazy(() => import("./pages/Product Engineering/Concept"));
+const ProductSolution = lazy(() => import("./pages/Product Engineering/Solution"));
+const ProductCustomDev = lazy(() => import("./pages/Product Engineering/CustomDev"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AnimationsDemo = lazy(() => import("./pages/AnimationsDemo"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));

@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useState, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowUpRight,
   Building2,
@@ -276,6 +277,7 @@ const successPatterns = [
 type CategoryType = "All" | string;
 
 const Portfolio = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState<CategoryType>("All");
 
   const categories = useMemo(
@@ -517,7 +519,14 @@ const Portfolio = () => {
                                 <ArrowUpRight className="w-4 h-4" />
                               </a>
                             ) : (
-                              <button className="w-full px-6 py-3 bg-muted text-foreground font-semibold rounded-lg border border-border hover:bg-muted/80 transition-colors">
+                              <button
+                                onClick={() =>
+                                  navigate("/contact", {
+                                    state: { project: project.title },
+                                  })
+                                }
+                                className="w-full px-6 py-3 bg-muted text-foreground font-semibold rounded-lg border border-border hover:bg-muted/80 transition-colors"
+                              >
                                 Ask Us About This Project
                               </button>
                             )}
@@ -558,7 +567,10 @@ const Portfolio = () => {
                   Tell us what you're building and we'll show you which of these
                   projects is the closest reference point.
                 </p>
-                <button className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 transition-colors">
+                <button
+                  onClick={() => navigate("/contact")}
+                  className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 transition-colors"
+                >
                   Schedule a Consultation
                 </button>
               </div>

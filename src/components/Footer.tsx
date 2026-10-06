@@ -2,6 +2,7 @@ import { Mail, Phone, MapPin, ArrowUpRight, Linkedin, Twitter, Instagram, Facebo
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import logoLight from "@/assets/logo-light.webp";
+import { RibbonBackdrop } from "@/components/PremiumKit";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -46,7 +47,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
+    <footer className="dark pm-dark relative overflow-hidden" style={{ backgroundColor: '#080d14', color: '#e2e8f0' }}>
+      <RibbonBackdrop />
       {/* Large background text */}
       <div 
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
@@ -54,7 +56,7 @@ const Footer = () => {
       >
         <span 
           className="text-[84px] md:text-[140px] lg:text-[210px] xl:text-[280px] font-bold tracking-tighter whitespace-nowrap opacity-[0.04]"
-          style={{ color: 'hsl(var(--secondary-foreground))' }}
+          style={{ color: "#e2e8f0" }}
         >
           TechPivot
         </span>
@@ -67,7 +69,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center mb-6">
               <img src={logoLight} alt="TechPivot Logo" className="w-[200px] h-[70px]" loading="lazy" />
             </Link>
-            <p className="text-secondary-foreground/60 text-sm leading-relaxed mb-6">
+            <p className="text-slate-400 text-sm leading-relaxed mb-6">
               {t("footer.tagline")}
             </p>
             <div className="flex gap-3">
@@ -77,7 +79,7 @@ const Footer = () => {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-slate-700/40 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                   aria-label={item.label}
                 >
                   <item.icon className="w-4 h-4" />
@@ -88,13 +90,13 @@ const Footer = () => {
 
           {/* Offerings */}
           <div>
-            <h4 className="font-bold text-sm mb-6 text-secondary-foreground">{t("footer.offerings")}</h4>
+            <h4 className="font-bold text-sm mb-6 text-slate-100">{t("footer.offerings")}</h4>
             <ul className="space-y-3">
               {offerings.map((item) => (
                 <li key={item.label}>
                   <Link 
                     to={item.href} 
-                    className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors flex items-center gap-1 group"
+                    className="text-sm text-slate-400 hover:text-primary transition-colors flex items-center gap-1 group"
                   >
                     {item.label}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -106,13 +108,13 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="font-bold text-sm mb-6 text-secondary-foreground">{t("footer.products")}</h4>
+            <h4 className="font-bold text-sm mb-6 text-slate-100">{t("footer.products")}</h4>
             <ul className="space-y-3">
               {products.map((item) => (
                 <li key={item.label}>
                   <Link 
                     to={item.href} 
-                    className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors flex items-center gap-1 group"
+                    className="text-sm text-slate-400 hover:text-primary transition-colors flex items-center gap-1 group"
                   >
                     {item.label}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -124,13 +126,13 @@ const Footer = () => {
 
           {/* Capability */}
           <div>
-            <h4 className="font-bold text-sm mb-6 text-secondary-foreground">Capability</h4>
+            <h4 className="font-bold text-sm mb-6 text-slate-100">Capability</h4>
             <ul className="space-y-3">
               {capabilities.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.href}
-                    className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors flex items-center gap-1 group"
+                    className="text-sm text-slate-400 hover:text-primary transition-colors flex items-center gap-1 group"
                   >
                     {item.label}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
@@ -142,13 +144,13 @@ const Footer = () => {
 
           {/* Insights & Community */}
           <div>
-            <h4 className="font-bold text-sm mb-6 text-secondary-foreground">{t("footer.insights")}</h4>
+            <h4 className="font-bold text-sm mb-6 text-slate-100">{t("footer.insights")}</h4>
             <ul className="space-y-3">
               {insights.map((item) => (
                 <li key={item.label}>
                   <Link 
                     to={item.href} 
-                    className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors flex items-center gap-1 group"
+                    className="text-sm text-slate-400 hover:text-primary transition-colors flex items-center gap-1 group"
                   >
                     {item.label}
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -160,8 +162,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-sm mb-6 text-secondary-foreground">{t("footer.getInTouch")}</h4>
-            <ul className="space-y-4 text-sm text-secondary-foreground/60">
+            <h4 className="font-bold text-sm mb-6 text-slate-100">{t("footer.getInTouch")}</h4>
+            <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                   <Mail size={14} className="text-primary" />
@@ -187,7 +189,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-secondary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-secondary-foreground/50">
+        <div className="mt-16 pt-8 border-t border-slate-700 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>{t("footer.rights")}</p>
           <div className="flex gap-6">
             <Link to="/faq" className="hover:text-primary transition-colors">{t("footer.faq")}</Link>

@@ -4,8 +4,8 @@
       "vision": "Vision & Leadership",
       "story": "Our Story and Mission",
       "leadership": "Leadership Team",
-      "offerings": "Offerings",
-      "product": "Product",
+      "offerings": "AI-Native Solutions",
+      "product": "Product Engineering",
       "technologies": "Capabilities",
       "insights": "Insights & Community",
       "blogs": "Blogs",
@@ -27,9 +27,9 @@
     "language": "Language"
   },
   "hero": {
-    "title1": "Transforming Open-Source LLMs into",
-     "title2": "Secure, Custom Enterprise Solutions.",
-    "subtitle": "TechPivot Technologies is an independent, global engineering services firm specializing in transforming open-source AI models (Llama, Mistral, Gemma, Falcon) into secure, high-performance, production-grade infrastructure bridging the gap between open-source innovation and enterprise-grade reliability.",
+    "title1": "Transforming Complex Engineering Challenges",
+     "title2": "into Scalable Software Products.",
+    "subtitle": "We partner with high-growth startups and enterprises to architect, build, and scale cloud-native applications with enterprise-grade security.",
     "tagline": "Innovation | Excellence | Collaboration | Growth",
     "cta": "Talk To Expert",
     "aiBadge": "AI & Machine Learning",
@@ -39,13 +39,14 @@
   },
   "scroller": {
     "eyebrow": "Product · Concept · Custom Dev",
-    "title": "Algorithms before hardware.",
+    "title": "Unlocking Power in Your Existing Hardware.",
     "subtitle": "Explore how Racer™ turns existing infrastructure into measurable performance gains scroll to see the full story.",
     "learnMore": "Learn more"
   },
   "services": {
     "eyebrow": "What We Offer",
-    "title": "Services We Deliver",
+    "title": "AI-Native Solutions",
+    "titleB": "Solutions",
     "subtitle": "Comprehensive technology solutions tailored to your business needs.",
     "learnMore": "Learn more"
   },

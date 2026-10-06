@@ -1,9 +1,13 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import heroBg from "@/assets/hero-bg.webp";
+import { Highlight, RibbonBackdrop } from "@/components/PremiumKit";
+
+// Set to true to bring back the animated dashboard panel in the hero (right column).
+const SHOW_HERO_DASHBOARD = false;
 
 // Animated text with word-by-word reveal
 const AnimatedHeadingLine = ({
@@ -17,7 +21,7 @@ const AnimatedHeadingLine = ({
 }) => {
   const words = children.split(" ");
   return (
-    <motion.span className={`block whitespace-normal md:whitespace-nowrap ${className}`}>
+    <motion.span className={`block whitespace-normal ${className}`}>
       {words.map((word, wordIndex) => (
         <span key={wordIndex} className="inline-block overflow-hidden mr-[0.2em]">
           <motion.span
@@ -215,7 +219,7 @@ const HeroAnimation = () => (
       transition={{ duration: 0.8, delay: 1.0 }}
       className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4 w-40 space-y-2"
     >
-      <p className="text-blue-200 text-[10px] font-semibold uppercase tracking-widest mb-1">AI Metrics</p>
+      <p className="text-blue-200 text-[10px] font-semibold uppercase tracking-widest mb-1">Platform Metrics</p>
       {[
         { label: "Accuracy", val: "99.2%", color: "bg-blue-400" },
         { label: "Latency", val: "12ms", color: "bg-purple-400" },
@@ -243,15 +247,55 @@ const HeroAnimation = () => (
       animate={{ y: [-4, 4, -4] }}
       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
     >
-      <span className="text-blue-200 text-xs font-semibold tracking-wide">⚡ Algorithmic AI Engine</span>
+      <span className="text-blue-200 text-xs font-semibold tracking-wide">⚡ Engineered for Scale</span>
     </motion.div>
+  </div>
+);
+
+// Point-wise features shown in the hero's right column.
+// Titles/descriptions/links are the same ones already used in the Services section — edit freely.
+const heroFeatures = [
+  { title: "Agentic AI", description: "Autonomous systems that perceive, reason, plan, and execute complex tasks.", href: "/services/agentic-ai" },
+  { title: "Generative AI", description: "Advanced tools for content generation and design automation.", href: "/services/generative-ai" },
+  { title: "SaaS Platform", description: "Secure, cloud-native applications with robust APIs.", href: "/services/saas-platform" },
+  { title: "Cloud & Security", description: "Scalable cloud architectures with enterprise security.", href: "/services/cloud-security" },
+  { title: "Custom Software", description: "Tailored software solutions built around your unique business.", href: "/services/custom-software" },
+];
+
+const FeatureCard = () => (
+  <div className="relative">
+    <div className="absolute -inset-10 opacity-70 pointer-events-none">
+      <RibbonBackdrop />
+    </div>
+    <div className="relative z-10 rounded-[28px] border border-foreground/15 bg-foreground/15 backdrop-blur-xl shadow-[0_20px_60px_-30px_rgba(0,0,0,0.5)] p-8 lg:p-10">
+      {/* Extra solid layer: cuts the card's transparency by ~50% (85% -> ~42%) */}
+      <div className="absolute inset-0 -z-10 rounded-[28px] bg-background/50 pointer-events-none" />
+      <ul className="space-y-5">
+        {heroFeatures.map((f, i) => (
+          <motion.li
+            key={f.title}
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 + i * 0.12 }}
+          >
+            <Link to={f.href} className="group flex items-start gap-3">
+              <ChevronRight className="w-5 h-5 mt-0.5 shrink-0 text-primary transition-transform group-hover:translate-x-1" />
+              <span>
+                <span className="block font-semibold text-foreground group-hover:text-primary transition-colors">{f.title}</span>
+                <span className="block text-sm text-muted-foreground leading-relaxed">{f.description}</span>
+              </span>
+            </Link>
+          </motion.li>
+        ))}
+      </ul>
+    </div>
   </div>
 );
 
 const Hero = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative pt-32 pb-28 bg-background overflow-hidden md:min-h-[102vh] flex items-center">
+    <section className="relative pt-32 pb-28 overflow-hidden md:min-h-[102vh] flex items-center bg-background">
       {/* Vector/network background — shows in dark mode only via CSS */}
       <div
         className="absolute inset-0 z-0 hero-vector-bg"
@@ -263,15 +307,15 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <div className="container px-6 lg:px-12 relative z-10 w-full">
-        <div style={{maxWidth: '620px'}}>
+      <div className="container px-6 lg:px-12 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="space-y-8"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.18] text-foreground [&>span]:mb-2">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.18] text-foreground [&>span]:mb-2">
               <AnimatedHeadingLine delay={0.05}>{t("hero.title1")}</AnimatedHeadingLine>
               <AnimatedHeadingLine delay={0.15} className="text-[#00b8d9]">{t("hero.title2")}</AnimatedHeadingLine>
             </h1>
@@ -291,7 +335,7 @@ const Hero = () => {
               transition={{ duration: 0.4, delay: 0.5 }}
               className="text-base md:text-lg text-primary font-medium tracking-wide"
             >
-              {t("hero.tagline")}
+              <Highlight>{t("hero.tagline")}</Highlight>
             </motion.p>
 
             <motion.div
@@ -309,6 +353,15 @@ const Hero = () => {
             </motion.div>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="hidden lg:block"
+        >
+          {SHOW_HERO_DASHBOARD ? <HeroAnimation /> : <FeatureCard />}
+        </motion.div>
       </div>
     </section>
   );

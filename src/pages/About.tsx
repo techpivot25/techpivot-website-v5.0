@@ -13,22 +13,22 @@ const coreValues = [
   {
     icon: Lightbulb,
     title: "Innovation",
-    description: "Constantly pushing boundaries and exploring new technological frontiers"
+    description: "We push into hard problems others route around, and we can point to what we shipped as a result."
   },
   {
     icon: Users,
     title: "Collaboration",
-    description: "Working closely with clients to understand and exceed their expectations"
+    description: "We embed with client engineering teams rather than hand off architecture diagrams, because the seam between systems is where the work actually lives.Working closely with clients to understand and exceed their expectations"
   },
   {
     icon: Award,
     title: "Excellence",
-    description: "Delivering the highest quality solutions with attention to detail"
+    description: "We judge our work by measurable performance under production load, not by the elegance of the design document."
   },
   {
     icon: Shield,
     title: "Integrity",
-    description: "Building trust through transparent and ethical business practices"
+    description: "We tell clients when AI is the wrong tool, when a closed-source dependency is the right call, and when a project should not be built because trust compounds and shortcuts do not.Building trust through transparent and ethical business practices"
   }
 ];
 
@@ -82,7 +82,7 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-xl text-surface-dark-foreground/70"
               >
-                We are a collective of AI researchers, distributed systems engineers, and cybersecurity veterans. Headquartered globally, we operate as an extension of your engineering team, removing the complexity of AI adoption.
+                We are a collective of AI researchers, distributed systems engineers, and cybersecurity veterans who build across the hardest seam in enterprise technology: the gap between legacy infrastructure and production-grade AI. We operate as an extension of your engineering team.
               </motion.p>
             </div>
           </div>
@@ -105,10 +105,10 @@ const About = () => {
                     Our Vision
                   </span>
                   <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 text-white">
-                    Global Leader in AI-Powered Engineering
+                    AI that runs inside critical systems not beside them.
                   </h2>
                   <p className="text-slate-400 leading-relaxed">
-                    To be the global partner of choice for enterprise AI, recognized for engineering software with mathematical rigor and a security-first mindset delivering faster, cheaper, and more precise applications that transform bleeding-edge research into reliable, revenue-generating technology.
+                    We are building toward a world where enterprises no longer treat AI as a parallel experiment running in a sandbox, disconnected from the systems that actually run the business. Instead, AI becomes a native capability of the infrastructure already trusted to move money, serve customers, and satisfy regulators engineered with mathematical rigor, secured by default, and measured in outcomes rather than demos. We intend to set the global standard for that engineering.
                   </p>
                 </motion.div>
               </AnimatedSection>
@@ -126,10 +126,10 @@ const About = () => {
                     Our Mission
                   </span>
                   <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-4 text-white">
-                    Engineering Software That Actually Performs
+                    Closing the gap between legacy infrastructure and next-generation AI.
                   </h2>
                   <p className="text-slate-400 leading-relaxed">
-                    To deliver sovereign, secure, and sustainable AI platforms that solve real business problems with algorithmic precision breaking enterprise dependence on closed-source black boxes and driving measurable, long-term outcomes.
+                    AI programs rarely fail at the model. They fail at the seam where streaming inference meets batch pipelines, where GPU elasticity meets change-control policy, where feature freshness meets data residency. Our mission is to engineer across that seam: sovereign, secure, sustainable AI platforms that solve real business problems with algorithmic precision, break enterprise dependence on closed-source black boxes, and produce outcomes you can measure in latency, cost, and revenue.
                   </p>
                 </motion.div>
               </AnimatedSection>
@@ -139,20 +139,22 @@ const About = () => {
             <div className="mt-12 p-8 bg-primary/5 border border-primary/20 rounded-2xl">
               <h3 className="text-xl font-bold text-white mb-3">Why TechPivot is Different</h3>
               <p className="text-slate-400 leading-relaxed">
-                Unlike typical software agencies, our engineering is backed by open-source algorithmic optimization frameworks — applied and tuned by our specialists to your specific infrastructure. This means our products don't just work — they perform measurably better, scale at lower cost, and ship faster than what conventional development delivers.
+                Most AI vendors sell a model or a platform and leave the integration problem to you. We start from the integration problem. Every system we ship is backed by open-source algorithmic optimization frameworks, applied and tuned by our specialists to your specific infrastructure not a reference architecture adapted from someone else's cloud. The result: systems that perform measurably better under your load, scale at lower cost, and ship faster than conventional development delivers.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary mb-1">AI-First</div>
-                  <div className="text-sm text-slate-400">Every product built with AI at the core, not bolted on after</div>
+                  <div className="text-sm text-slate-400">AI at the core of every product, not bolted on after the architecture is frozen.
+
+</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary mb-1">Algorithmic</div>
-                  <div className="text-sm text-slate-400">Mathematical precision applied to infrastructure and performance</div>
+                  <div className="text-sm text-slate-400">Mathematical precision applied to infrastructure, performance, and inference economics.</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary mb-1">Global</div>
-                  <div className="text-sm text-slate-400">Delivering for enterprises across US, India, Middle East & UK</div>
+                  <div className="text-sm text-slate-400">Engineering for enterprises across the US, India, Middle East, and UK, with data-residency and regulatory boundaries treated as first-class design constraints.</div>
                 </div>
               </div>
             </div>
@@ -167,7 +169,7 @@ const About = () => {
                 Our Core Values.
               </h2>
               <p className="text-xl text-slate-400 mt-2">
-                The principles that guide everything we do.
+                The principles that guide everything we do stated as commitments, not adjectives.
               </p>
             </AnimatedSection>
 
@@ -199,13 +201,16 @@ const About = () => {
                 
                 <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
                   <p>
-                    Founded with a vision to bridge world-class AI engineering with algorithmic infrastructure expertise, TechPivot Technologies has grown into a trusted global partner for enterprises seeking measurable technology outcomes. Our journey began with a simple conviction: that software should be engineered with mathematical precision — not just built and shipped.
+                    <strong>TechPivot</strong> was founded by engineers who kept watching the same failure pattern repeat across industries.
                   </p>
                   <p>
-                    Today, we stand at the forefront of technological advancement, specializing in Artificial Intelligence, Blockchain solutions, and Metaverse development. Our team of expert developers, designers, and strategists work tirelessly to transform complex challenges into elegant solutions.
+                    Enterprise AI pilots looked promising in notebooks. They stalled the moment they met reality: decades of business logic locked inside mainframes and ERPs. Batch pipelines that could not deliver fresh context to a model. Access controls and audit requirements that no MLOps stack had been designed to satisfy. Models that were accurate in evaluation and unaffordable in production. The problem was never ambition. It was engineering across a gap no one had built for.
                   </p>
                   <p>
-                    We have successfully delivered projects across various industries, helping organizations streamline operations, enhance customer experiences, and unlock new revenue streams. Our commitment to innovation and excellence has made us a preferred technology partner for businesses worldwide.
+                    We started TechPivot to build for that gap specifically. Not "AI transformation" as a slogan engineering as a discipline: pipelines that are observable, models that are versioned, inference paths that are measured against latency, cost, security, and compliance constraints from day one. We connect what works to what's next, instead of asking enterprises to rip out the infrastructure their business depends on.
+                  </p>
+                  <p>
+                    Today we engineer AI, blockchain, and metaverse systems for enterprises that need measurable technology outcomes — not prototypes. Our team of researchers, systems engineers, and security specialists operates as an extension of client engineering organizations, and our work is judged by the same standard our clients are: does it run, does it hold under load, and does it pay for itself.
                   </p>
                 </div>
               </AnimatedSection>

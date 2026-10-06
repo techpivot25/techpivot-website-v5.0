@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { RibbonBackdrop } from "@/components/PremiumKit";
 import { ArrowRight, Lightbulb, Rocket, Code2, Cpu, Gauge, Layers, TrendingUp } from "lucide-react";
 
 const cards = [
@@ -79,17 +80,18 @@ const ProductConceptScroller = () => {
   };
 
   return (
-    <section className="relative pt-4 pb-12 bg-background">
-      <div className="container px-6 lg:px-12">
+    <section className="dark pm-dark relative overflow-hidden pt-20 pb-24" style={{ backgroundColor: '#080d14' }}>
+      <RibbonBackdrop />
+      <div className="container px-6 lg:px-12 relative z-10">
         <div className="flex items-end justify-between mb-6 gap-4">
           <div>
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3">
               {t("scroller.eyebrow")}
             </span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">
               {t("scroller.title")}
             </h2>
-            <p className="text-muted-foreground mt-2 max-w-2xl text-sm md:text-base">
+            <p className="text-slate-400 mt-2 max-w-2xl text-sm md:text-base">
               {t("scroller.subtitle")}
             </p>
           </div>
@@ -129,7 +131,7 @@ const ProductConceptScroller = () => {
               >
                 <Link
                   to={c.to}
-                  className="group block h-full rounded-3xl border border-border bg-gradient-to-br from-primary/10 to-transparent p-6 hover:shadow-elevated hover:ring-2 hover:ring-primary/40 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+                  className="group block h-full rounded-3xl border border-white/10 bg-white/[0.05] backdrop-blur-md p-6 hover:shadow-elevated hover:ring-2 hover:ring-primary/40 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="w-12 h-12 rounded-2xl bg-background/80 backdrop-blur flex items-center justify-center mb-5 border border-border">
                     <Icon className="w-6 h-6 text-primary" />
@@ -137,10 +139,10 @@ const ProductConceptScroller = () => {
                   <div className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">
                     {c.eyebrow}
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-3 leading-snug">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 leading-snug">
                     {c.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-5 whitespace-pre-line">
+                  <p className="text-sm text-slate-400 leading-relaxed mb-5 whitespace-pre-line">
                     {c.description}
                   </p>
                   <span className="inline-flex items-center text-sm font-semibold text-primary">

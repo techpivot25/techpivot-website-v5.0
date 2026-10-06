@@ -103,24 +103,24 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-soft" : "bg-background"}`}>
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="container mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
             <img
               src={logoSrc}
               alt="TechPivot Logo"
-              className="w-[200px] h-[70px]"
-              width={200}
-              height={70}
+              className="w-[160px] h-[56px]"
+              width={160}
+              height={56}
               loading="eager"
               decoding="async"
               fetchPriority="high"
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-4 xl:gap-6">
             <div className="relative" onMouseEnter={() => setIsVisionOpen(true)} onMouseLeave={() => setIsVisionOpen(false)}>
-              <button className="flex items-center gap-1 text-sm font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
+              <button className="flex items-center gap-1 text-xs font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
                 {t("header.nav.vision")} <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isVisionOpen ? "rotate-180" : ""}`} />
               </button>
               {isVisionOpen && <div className="absolute left-1/2 -translate-x-1/2 top-full w-[260px] h-3" />}
@@ -132,7 +132,7 @@ const Header = () => {
             </div>
 
             <div className="relative" onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)}>
-              <button className="flex items-center gap-1 text-sm font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
+              <button className="flex items-center gap-1 text-xs font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
                 {t("header.nav.offerings")} <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
               </button>
               {isServicesOpen && <div className="absolute left-1/2 -translate-x-1/2 top-full w-[200px] h-6" />}
@@ -160,7 +160,7 @@ const Header = () => {
             </div>
 
             <div className="relative" onMouseEnter={() => setIsProductsOpen(true)} onMouseLeave={() => setIsProductsOpen(false)}>
-              <button className="flex items-center gap-1 text-sm font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
+              <button className="flex items-center gap-1 text-xs font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
                 {t("header.nav.product")} <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? "rotate-180" : ""}`} />
               </button>
               {isProductsOpen && <div className="absolute left-1/2 -translate-x-1/2 top-full w-[260px] h-3" />}
@@ -172,7 +172,7 @@ const Header = () => {
             </div>
 
             <div className="relative" onMouseEnter={() => setIsCapabilitiesOpen(true)} onMouseLeave={() => setIsCapabilitiesOpen(false)}>
-              <button className="flex items-center gap-1 text-sm font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
+              <button className="flex items-center gap-1 text-xs font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
                 Capabilities <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCapabilitiesOpen ? "rotate-180" : ""}`} />
               </button>
               {isCapabilitiesOpen && <div className="absolute left-1/2 -translate-x-1/2 top-full w-[320px] h-3" />}
@@ -184,7 +184,7 @@ const Header = () => {
             </div>
 
             <div className="relative" onMouseEnter={() => setIsInsightsOpen(true)} onMouseLeave={() => setIsInsightsOpen(false)}>
-              <button className="flex items-center gap-1 text-sm font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
+              <button className="flex items-center gap-1 text-xs font-medium transition-colors py-2 text-muted-foreground hover:text-foreground">
                 {t("header.nav.insights")} <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isInsightsOpen ? "rotate-180" : ""}`} />
               </button>
               {isInsightsOpen && <div className="absolute left-1/2 -translate-x-1/2 top-full w-[240px] h-3" />}

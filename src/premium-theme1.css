@@ -1,0 +1,70 @@
+/* Import at the bottom of src/index.css:  @import "./premium-theme.css";
+   Everything is namespaced (--pm-*, .pm-*) so existing tokens stay untouched. */
+
+:root {
+  --pm-black: #050505;
+  --pm-white: #ffffff;
+  --pm-ink: #171717;
+  --pm-muted: #6f6f6f;
+  --pm-yellow: #ffc400;
+  --pm-yellow-soft: #fff5c7;
+  --pm-line: #e8e8e8;
+}
+
+/* Yellow bar that draws under a word when it scrolls into view */
+.pm-highlight {
+  background-image: linear-gradient(var(--pm-yellow), var(--pm-yellow));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 0% 0.32em;
+  transition: background-size 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+.pm-highlight.pm-in { background-size: 100% 0.32em; }
+
+/* Dark liquid-metal section background (pure CSS, no image needed) */
+.pm-dark {
+  background:
+    radial-gradient(60% 80% at 80% 20%, rgba(255, 196, 0, 0.22), transparent 60%),
+    radial-gradient(50% 70% at 10% 90%, rgba(120, 120, 130, 0.35), transparent 65%),
+    conic-gradient(from 210deg at 60% 50%, #050505, #1a1a1d, #050505 40%, #2a2a2e 60%, #050505);
+  color: #fff;
+}
+
+/* Light silky section background */
+.pm-light {
+  background:
+    radial-gradient(70% 90% at 15% 0%, rgba(255, 245, 199, 0.9), transparent 60%),
+    linear-gradient(180deg, #fff, #f6f6f4);
+  color: var(--pm-ink);
+}
+
+.pm-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px -30px rgba(0, 0, 0, 0.25);
+}
+.pm-glass-dark {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+}
+
+.pm-float { animation: pm-float 7s ease-in-out infinite; }
+@keyframes pm-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+
+.pm-marquee { display: flex; width: max-content; animation: pm-marquee 32s linear infinite; }
+@keyframes pm-marquee { to { transform: translateX(-50%); } }
+
+.pm-lift { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+.pm-lift:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-float, .pm-marquee { animation: none; }
+  .pm-highlight { transition: none; background-size: 100% 0.32em; }
+}
